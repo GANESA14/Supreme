@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title id="page-title">Product Details - Savage Pipes</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet"/>
+  <link rel="icon" href="../logo.jpeg" />
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+    * {
+      font-family: 'Inter', sans-serif;
+    }
+    .text-gradient {
+      background: linear-gradient(to right, #7e22ce, #9333ea);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .product-image {
+      transition: transform 0.3s ease;
+    }
+    .product-image:hover {
+      transform: scale(1.05);
+    }
+    .feature-icon {
+      background: linear-gradient(135deg, #9333ea, #7e22ce);
+    }
+  </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+  <nav class="fixed top-0 w-full z-50 bg-white bg-opacity-80 backdrop-filter backdrop-blur-md shadow">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <div class="flex items-center">
+          <div class="flex-shrink-0 flex items-center space-x-2 cursor-pointer" onclick="window.location.href='../index.html'">
+            <img src="../logo.jpeg" alt="Savage Pipes Logo" class="h-10 w-auto rounded-full" />
+            <span class="hidden md:block text-xl font-bold text-gradient">Savage Pipes</span>
+          </div>
+        </div>
+        <div class="md:hidden">
+          <button id="mobile-menu-btn" class="text-gray-700 hover:text-purple-600 focus:outline-none">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+   
+    </div>
+  </nav>
+
+  <main class="pt-20 pb-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-8">
+      <nav class="flex items-center space-x-2 text-sm text-gray-600">
+        <a href="index.html" class="hover:text-purple-600 transition">Home</a>
+        <span>/</span>
+        <a href="index.html#products" class="hover:text-purple-600 transition">Products</a>
+        <span>/</span>
+        <span id="breadcrumb-category" class="text-gray-900 font-medium">Product Details</span>
+      </nav>
+    </div>
+
+    <!-- Product Details Section -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 p-8">
+          <!-- Product Image -->
+          <div class="flex justify-center items-center">
+            <div class="bg-gray-50 rounded-xl p-8 w-full max-w-md">
+              <img id="product-image" 
+                   src="" 
+                   alt="Product Image" 
+                   class="product-image w-full h-80 object-contain rounded-lg">
+            </div>
+          </div>
+
+          <!-- Product Information -->
+          <div class="space-y-6">
+            <div>
+              <span id="product-category" class="inline-block px-3 py-1 bg-purple-100 text-purple-700 text-sm font-medium rounded-full mb-3"></span>
+              <h1 id="product-name" class="text-4xl font-bold text-gray-900 mb-4"></h1>
+              <p id="product-description" class="text-gray-600 text-lg leading-relaxed"></p>
+            </div>
+
+            <!-- Price -->
+            <div class="border-t border-gray-200 pt-6">
+              <div class="flex items-center space-x-4">
+                <span class="text-3xl font-bold text-gradient" id="product-price"></span>
+                <span class="text-sm text-gray-500">per unit</span>
+              </div>
+            </div>
+
+            <!-- Features -->
+            <div class="border-t border-gray-200 pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Key Features</h3>
+              <div id="product-features" class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <!-- Features will be populated by JavaScript -->
+              </div>
+            </div>
+
+            <!-- Specifications -->
+            <div class="border-t border-gray-200 pt-6">
+              <h3 class="text-xl font-semibold text-gray-900 mb-4">Specifications</h3>
+              <div class="bg-gray-50 rounded-lg p-4">
+                <div id="specifications" class="space-y-2">
+                  <!-- Specifications will be populated by JavaScript -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="border-t border-gray-200 pt-6">
+              <div class="flex flex-col sm:flex-row gap-4">
+                <button class="flex-1 bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 px-6 rounded-lg transition duration-300 transform hover:scale-105 shadow-lg">
+                  Buy
+                </button>
+                <button class="flex-1 border-2 border-purple-600 text-purple-600 hover:bg-purple-600 hover:text-white font-semibold py-3 px-6 rounded-lg transition duration-300">
+                  Contact 
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="border-t border-gray-200 bg-gray-50 flex flex-col lg:flex-row">
+          <!-- Tabs container -->
+          <div class="w-full lg:w-2/3 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
+            <div class="flex justify-between border-b border-gray-200 mb-4 overflow-x-auto">
+              <button class="tab-button active whitespace-nowrap px-4 py-2 text-sm font-medium text-purple-600 border-b-2 border-purple-600" data-tab="description">
+                Description
+              </button>
+              <button class="tab-button whitespace-nowrap px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700" data-tab="applications">
+                Applications
+              </button>
+              <button class="tab-button whitespace-nowrap px-4 py-2 text-sm font-medium text-gray-500 hover:text-gray-700" data-tab="installation">
+                Installation
+              </button>
+            </div>
+            <div id="tab-content">
+              <div id="description-tab" class="tab-content">
+                <div class="prose max-w-none">
+                  <p class="text-gray-700 leading-relaxed" id="detailed-description"></p>
+                </div>
+              </div>
+              <div id="applications-tab" class="tab-content hidden">
+                <div class="prose max-w-none">
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Recommended Applications</h4>
+                  <ul id="applications-list" class="list-disc list-inside space-y-1 text-gray-700"></ul>
+                </div>
+              </div>
+              <div id="installation-tab" class="tab-content hidden">
+                <div class="prose max-w-none">
+                  <h4 class="text-lg font-semibold text-gray-900 mb-2">Installation Guidelines</h4>
+                  <div id="installation-info" class="text-gray-700 space-y-2"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        
+          <!-- Sketchfab Viewer container -->
+          <div class="w-full lg:w-1/3 px-4 sm:px-6 lg:px-8 py-6 flex justify-center" id="containerford">
+            <!-- iframe inserted by JS -->
+          </div>
+        </div>
+        
+      </div>
+      <div class="mt-8 text-center" id="pathinsert">
+        
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // Mobile menu toggle
+    document.getElementById("mobile-menu-btn").addEventListener("click", () => {
+      document.getElementById("mobile-menu").classList.toggle("hidden")
+    })
+
+    // Product data matching the index.html
+    const allProducts = [
+      {
+        name: "PVC Pipe 1",
+        category: "Pvc",
+        img: "https://www.supreme.co.in/uploads/images/5a5IfXa5sYfwdT2VOAxLiDbp1U1El8kswHyvF7Nu.png",
+        description: "High-quality PVC pipe suitable for residential and industrial plumbing applications.",
+        price: "₹120",
+        features: ["Durable", "Corrosion-resistant", "Lightweight"],
+        specifications: {
+          "Material": "PVC (Polyvinyl Chloride)",
+          "Pressure Rating": "10-16 Bar",
+          "Temperature Range": "0°C to 60°C",
+          "Standard": "IS 4985:2000"
+        },
+        applications: ["Residential plumbing", "Water supply systems", "Irrigation networks", "Industrial applications"],
+        detailedDescription: "Our premium PVC Pipe 1 is engineered for exceptional durability and reliability in various plumbing applications. Made from high-grade polyvinyl chloride, this pipe offers excellent chemical resistance and long-term performance. The smooth inner surface ensures optimal flow characteristics while the robust construction withstands high pressure conditions.",
+        installation: ["Ensure proper pipe support at regular intervals", "Use appropriate solvent cement for joints", "Allow adequate curing time before pressure testing", "Follow local plumbing codes and regulations"]
+      },
+      {
+        name: "PVC Pipe 2",
+        category: "Pvc",
+        img: "https://www.supreme.co.in/uploads/images/zG6aEjXrMqDccwvXvJg8fwxvvNBfM0ydKODGloNU.png",
+        description: "Standard PVC pipe used for water supply systems and irrigation.",
+        price: "₹135",
+        features: ["UV-resistant", "Smooth inner surface", "High pressure tolerance"],
+        specifications: {
+          "Material": "UV-Stabilized PVC",
+          "Pressure Rating": "12.5-20 Bar",
+          "Temperature Range": "0°C to 70°C",
+          "Standard": "IS 4985:2000"
+        },
+        applications: ["Municipal water supply", "Agricultural irrigation", "Swimming pool systems", "Garden sprinkler systems"],
+        detailedDescription: "PVC Pipe 2 features advanced UV-stabilization technology, making it ideal for outdoor installations and exposed applications. The enhanced formulation provides superior resistance to environmental stress cracking and maintains structural integrity under varying weather conditions.",
+        installation: ["Protect from direct sunlight during storage", "Use UV-resistant fittings and adhesives", "Ensure proper bedding in underground installations", "Test system pressure gradually"]
+      },
+      {
+        name: "Coupler 1",
+        category: "Couplers",
+        img: "https://www.supreme.co.in/uploads/images/DRdn9TWdl8qIzqR4KBKJM9gSSkuMpD2MuawIO1Gj.jpg",
+        description: "Reliable coupler for joining two pipe sections securely.",
+        price: "₹40",
+        features: ["Leak-proof", "Quick installation", "Compact size"],
+        specifications: {
+          "Material": "PVC with EPDM Gasket",
+          "Connection Type": "Socket x Socket",
+          "Pressure Rating": "16 Bar",
+          "Temperature Range": "-10°C to 60°C"
+        },
+        applications: ["Pipe extension", "Repair work", "System modifications", "Emergency connections"],
+        detailedDescription: "Our Coupler 1 provides a reliable and permanent connection between pipe sections. Featuring precision-molded construction and high-quality EPDM gaskets, it ensures leak-free performance under high pressure conditions. The compact design minimizes space requirements in tight installations.",
+        installation: ["Clean pipe ends thoroughly before installation", "Apply thin layer of lubricant to gasket", "Insert pipe fully into socket", "Check alignment before final assembly"]
+      },
+      {
+        name: "Elbow Joint 1",
+        category: "Elbow",
+        img: "https://www.supreme.co.in/uploads/images/afJ05emKscZi7IhQe2kn8gu7bCqcalRWLsth5dH8.jpg",
+        description: "90-degree elbow joint for directing pipe flow around corners.",
+        price: "₹55",
+        features: ["Heavy-duty", "Perfect for bends", "Easy to fit"],
+        specifications: {
+          "Angle": "90 Degrees",
+          "Material": "High-Grade PVC",
+          "Pressure Rating": "16 Bar",
+          "Connection": "Socket x Socket"
+        },
+        applications: ["Direction changes in pipelines", "Corner installations", "Basement plumbing", "Tight space routing"],
+        detailedDescription: "Elbow Joint 1 is engineered for smooth directional changes in piping systems. The precision-molded 90-degree angle ensures optimal flow characteristics while minimizing pressure drop. Heavy-duty construction provides exceptional strength and durability in demanding applications.",
+        installation: ["Ensure proper pipe support near elbow", "Use appropriate solvent cement", "Allow for thermal expansion", "Maintain proper pipe alignment"]
+      },
+      {
+        name: "Elbow Joint 2",
+        category: "Elbow",
+        img: "https://www.supreme.co.in/uploads/images/IcJnVLrmdEQXbhTbccY3kXdQ9zrlYCgXqMSupHFx.jpg",
+        description: "Compact elbow fitting for small space installations.",
+        price: "₹48",
+        features: ["Smooth curves", "Resistant to wear", "Sturdy build"],
+        specifications: {
+          "Angle": "90 Degrees",
+          "Material": "Reinforced PVC",
+          "Pressure Rating": "12.5 Bar",
+          "Design": "Compact Profile"
+        },
+        applications: ["Confined space installations", "Residential plumbing", "Decorative piping", "Low-profile routing"],
+        detailedDescription: "Elbow Joint 2 offers a space-saving solution for directional changes in constrained installations. The compact profile and smooth internal curves minimize flow turbulence while the reinforced construction ensures long-term reliability in residential and light commercial applications.",
+        installation: ["Measure available space before installation", "Use proper cutting tools for clean cuts", "Test fit before cementing", "Allow adequate curing time"]
+      },
+      {
+        name: "Gate Valve 1",
+        category: "Gate Valve",
+        img: "https://www.supreme.co.in/uploads/images/4vsIaNhiYC0GChX496h5jECcOBoqF3tOyGl4O879.jpg",
+        description: "Robust gate valve for flow regulation in large pipelines.",
+        price: "₹450",
+        features: ["Rust-proof body", "Leak-proof design", "Easy grip handle"],
+        specifications: {
+          "Material": "Brass Body with Steel Gate",
+          "Pressure Rating": "25 Bar",
+          "Operation": "Manual Handwheel",
+          "End Connections": "Threaded"
+        },
+        applications: ["Main water lines", "Industrial processes", "Fire protection systems", "High-pressure applications"],
+        detailedDescription: "Gate Valve 1 is designed for critical flow control applications requiring reliable shut-off capabilities. The robust brass body construction provides excellent corrosion resistance while the precision-machined gate ensures tight sealing. Ideal for high-pressure systems where minimal pressure drop is essential.",
+        installation: ["Install in fully open or fully closed position", "Support valve weight independently", "Use thread sealant on connections", "Operate slowly to prevent water hammer"]
+      },
+      {
+        name: "Gate Valve 2",
+        category: "Gate Valve",
+        img: "https://www.supreme.co.in/uploads/images/lFS6WhHk20b0At3QJKsjO2sJiew7qmpYK9tHHBJr.jpg",
+        description: "Compact and efficient gate valve suitable for industrial use.",
+        price: "₹490",
+        features: ["Durable brass build", "Smooth operation", "Reliable sealing"],
+        specifications: {
+          "Material": "Premium Brass Construction",
+          "Pressure Rating": "20 Bar",
+          "Operation": "Quarter-turn Handle",
+          "Sealing": "O-ring and Packing"
+        },
+        applications: ["Process control", "Chemical handling", "Water treatment", "HVAC systems"],
+        detailedDescription: "Gate Valve 2 combines compact design with industrial-grade performance. The premium brass construction and advanced sealing technology provide exceptional reliability in demanding environments. Quarter-turn operation ensures quick and efficient flow control with minimal maintenance requirements.",
+        installation: ["Verify flow direction before installation", "Use appropriate pipe dope on threads", "Do not over-tighten connections", "Test operation before system startup"]
+      }
+    ]
+    window.variable;
+    function getURLParams() {
+      const params = new URLSearchParams(window.location.search)
+      variable=params.get('path');
+      return {
+        name: params.get('name'),
+        category: params.get('category'),
+        img: params.get('img'),
+        path: params.get('path')
+      }
+    }
+ function findProduct(name) {
+      return allProducts.find(product => product.name === name)
+    }
+
+    // Populate product details
+    function populateProductDetails() {
+      const urlParams = getURLParams()
+      const product = findProduct(urlParams.name)
+
+      if (!product) {
+        document.body.innerHTML = `
+          <div class="min-h-screen flex items-center justify-center">
+            <div class="text-center">
+              <h1 class="text-2xl font-bold text-gray-900 mb-4">Product Not Found</h1>
+              <a href="pipes.html" class="text-purple-600 hover:text-purple-700">Return to Home</a>
+            </div>
+          </div>
+        `
+        return
+      }
+      document.getElementById('page-title').textContent = `${product.name} - Savage Pipes`
+      document.getElementById('breadcrumb-category').textContent = product.category
+      document.getElementById('containerford').innerHTML = `
+             <iframe title="Automatic pump with Water tank" frameborder="0" allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" allow="autoplay; fullscreen; xr-spatial-tracking" xr-spatial-tracking execution-while-out-of-viewport execution-while-not-rendered web-share src="https://sketchfab.com/models/${variable}/embed?autospin=1&autostart=1&preload=1&transparent=1"> </iframe>
+           <p class="hidden sm:block text-red-600 text-[15px] text-center">(*) Press F</p>
+        `;
+      document.getElementById('product-image').src = product.img
+      document.getElementById('product-image').alt = product.name
+      document.getElementById('product-category').textContent = product.category
+      document.getElementById('product-name').textContent = product.name
+      document.getElementById('product-description').textContent = product.description
+      document.getElementById('product-price').textContent = product.price
+
+      // Update features
+      const featuresContainer = document.getElementById('product-features')
+      featuresContainer.innerHTML = product.features.map(feature => `
+        <div class="flex items-center space-x-3">
+          <div class="feature-icon w-3 h-3 rounded-full"></div>
+          <span class="text-gray-700">${feature}</span>
+        </div>
+      `).join('')
+
+      // Update specifications
+      const specsContainer = document.getElementById('specifications')
+      specsContainer.innerHTML = Object.entries(product.specifications).map(([key, value]) => `
+        <div class="flex justify-between">
+          <span class="font-medium text-gray-700">${key}:</span>
+          <span class="text-gray-600">${value}</span>
+        </div>
+      `).join('')
+
+      document.getElementById('detailed-description').textContent = product.detailedDescription
+      const applicationsList = document.getElementById('applications-list')
+      applicationsList.innerHTML = product.applications.map(app => `<li>${app}</li>`).join('')
+      const installationInfo = document.getElementById('installation-info')
+      installationInfo.innerHTML = product.installation.map(step => `
+        <div class="flex items-start space-x-3">
+          <div class="feature-icon w-2 h-2 rounded-full mt-2"></div>
+          <span>${step}</span>
+        </div>
+      `).join('')
+    }
+    function initializeTabs() {
+      const tabButtons = document.querySelectorAll('.tab-button')
+      const tabContents = document.querySelectorAll('.tab-content')
+
+      tabButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          const targetTab = button.getAttribute('data-tab')
+          tabButtons.forEach(btn => {
+            btn.classList.remove('active', 'text-purple-600', 'border-purple-600')
+            btn.classList.add('text-gray-500')
+          })
+          button.classList.add('active', 'text-purple-600', 'border-b-2', 'border-purple-600')
+          button.classList.remove('text-gray-500')
+tabContents.forEach(content => {
+            content.classList.add('hidden')
+          })
+          document.getElementById(`${targetTab}-tab`).classList.remove('hidden')
+        })
+      })
+    }
+    document.addEventListener('DOMContentLoaded', () => {
+      populateProductDetails()
+      initializeTabs()
+    })
+  </script>
+<script src="main.js"></script>
+</body>
+</html>
